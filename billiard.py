@@ -2,6 +2,7 @@ import numpy as np
 from player import Player
 import math
 
+
 class Billiard:
     """balls, player, dt"""
     def __init__(self, balls, player, dt):

@@ -7,6 +7,7 @@ from player import Player
 from ball import Ball
 from billiard import Billiard
 
+
 dt = 0.001
 # Arguments
 arg = getopt.getopt(sys.argv[1:], "", ["n=","alpha=", "radius=", "cb=", "cw="])

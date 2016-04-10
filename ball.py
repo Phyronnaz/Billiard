@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Ball:
     """position, vitesse, id, canvas, radius, alpha, cw, cb, color"""
     def __init__ (self, position, vitesse, id, canvas, radius, alpha, cw, cb, color, dt, create_ball=True):

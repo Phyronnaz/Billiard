@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Player:
     score = 0
     hit_list = []
