@@ -2,7 +2,7 @@ import numpy as np
 from player import Player
 import math
 
-class Billiards:
+class Billiard:
     """balls, player, dt"""
     def __init__(self, balls, player, dt):
         self.balls = balls
@@ -38,7 +38,7 @@ class Billiards:
 
     def copy(self):
         new_balls = [b.copy() for b in self.balls]
-        return Billiards(new_balls, Player(new_balls[0], target_position=self.player.target_position), self.dt)
+        return Billiard(new_balls, Player(new_balls[0], target_position=self.player.target_position), self.dt)
 
     def check_collisions (self):
         for a in range(len(self.balls)):

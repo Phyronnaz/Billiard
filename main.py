@@ -5,7 +5,7 @@ import sys, getopt
 
 from player import Player
 from ball import Ball
-from billiards import Billiards
+from billiard import Billiard
 
 dt = 0.001
 # Arguments
@@ -73,11 +73,11 @@ else:
 
 #Create player
 player = Player(balls[0], canvas=canvas)
-#Create billiards
-billiards = Billiards(balls, player, dt)
+#Create billiard
+billiard = Billiard(balls, player, dt)
 
-def draw_lines(event, billiards, canvas, canvas_lines):
-    lines = billiards.copy().simulate()
+def draw_lines(event, billiard, canvas, canvas_lines):
+    lines = billiard.copy().simulate()
     for i in range(25):
         if i < len(lines) - 1:
             canvas.coords(canvas_lines[i], lines[i][0],lines[i][1],lines[i+1][0],lines[i+1][1])
@@ -87,19 +87,19 @@ def draw_lines(event, billiards, canvas, canvas_lines):
 
 canvas_lines = [canvas.create_line(0,0,0,0, width=2, smooth=1, dash=5) for k in range(25)]
 
-canvas.bind("<space>", lambda event: draw_lines(event, billiards, canvas, canvas_lines))
+canvas.bind("<space>", lambda event: draw_lines(event, billiard, canvas, canvas_lines))
 
 time = 0
-def main(player, billiards, dt):
+def main(player, billiard, dt):
     global time, canvas, canvas_lines
     time += 1
     player.update()
     for k in range(int(10 / (dt * 1000))):
-        billiards.update()
-    billiards.update_graphics()
+        billiard.update()
+    billiard.update_graphics()
     if time % 10 == 0:
-        draw_lines(None, billiards, canvas, canvas_lines)
-    fenetre.after(10, lambda: main(player, billiards, dt))
+        draw_lines(None, billiard, canvas, canvas_lines)
+    fenetre.after(10, lambda: main(player, billiard, dt))
 
-main(player, billiards, dt)
+main(player, billiard, dt)
 fenetre.mainloop()
