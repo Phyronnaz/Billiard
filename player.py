@@ -4,8 +4,8 @@ import numpy as np
 class Player:
     score = 0
     hit_list = []
-    power = 0
-    angle = 0
+    power = 1000
+    angle = 0.26
     use_mouse = True
 
     """ball, canvas"""

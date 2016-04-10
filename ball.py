@@ -67,6 +67,8 @@ class Ball:
         self.ymax = self.canvas.winfo_height() - self.radius
         self.xmin = self.radius
         self.ymin = self.radius
+        # self.canvasBall = self.canvas.create_oval(-self.radius, -self.radius, self.radius, self.radius,\
+        #                                           outline='black',fill=self.color)
         self.canvas.coords(self.canvasBall, self.position_x - self.radius,\
                                             self.position_y - self.radius,\
                                             self.position_x + self.radius,\
