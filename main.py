@@ -95,12 +95,11 @@ def main(player, billiard, dt):
     global time, canvas, canvas_lines
     time += 1
     player.update()
-    for k in range(1+int(10 / (dt * 1000))):
-        billiard.update()
-        billiard.update_graphics()
+    billiard.update()
+    billiard.update_graphics()
     # if time % 10 == 0:
     #     draw_lines(None, billiard, canvas, canvas_lines)
-    fenetre.after(10, lambda: main(player, billiard, dt))
+    fenetre.after(1, lambda: main(player, billiard, dt))
 
 main(player, billiard, dt)
 fenetre.mainloop()

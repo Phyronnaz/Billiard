@@ -55,7 +55,7 @@ class Billiard:
                     Vr = k.get_vitesse() - l.get_vitesse()
                     N = (k.get_position() - l.get_position()) / d
 
-                    I = N *abs(Vr.dot(N)) * (1 + k.cb) / 2
+                    I = N * abs(Vr.dot(N)) * (1 + k.cb) / 2
 
                     k.add_impulse(I)
                     l.add_impulse(-I)
