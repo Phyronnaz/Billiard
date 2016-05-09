@@ -97,15 +97,15 @@ def space(event, billes, ligne, canvas):
         bille.touchee = False
 
     canvas.coords(ligne, 0, 0, 0, 0)
-    billes[0].vitesse = intelligence_artificielle(billes)
     billes[1].vitesse = np.array([0, 0])
     billes[2].vitesse = np.array([0, 0])
+    billes[0].vitesse = intelligence_artificielle(billes)
 
 
 def intelligence_artificielle(billes):
     dt = 0.001
     new_billes = [bille.copy() for bille in billes]
-    v = 10000
+    v = 5000
     for theta in np.linspace(0, 2 * np.pi, 100):
         new_billes[0].vitesse = v * np.array([np.cos(theta), np.sin(theta)])
         for k in range(int(5 / dt)):
